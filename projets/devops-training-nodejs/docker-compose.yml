@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nodejs-app:
+    container_name: training
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "2368:2368"
+    volumes:
+      - /app/logs
+    restart: always
