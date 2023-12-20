@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress_volume:/var/www/html
+    networks:
+      - wordpress_network
+
+  mariadb_wordpress:
+    image: mariadb
+    container_name: mariadb_wordpress
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: example
+    volumes:
+      - mariadb_wordpress_volume:/var/lib/mysql
+    networks:
+      - wordpress_network
+
+volumes:
+  wordpress_volume:
+    name: wordpress_volume
+    driver: local
+  mariadb_wordpress_volume:
+    name: mariadb_wordpress_volume
+    driver: local
+
+networks:
+  wordpress_network:
+    name: wordpress_network
+    driver: bridge

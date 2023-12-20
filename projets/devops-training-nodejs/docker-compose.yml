@@ -1,13 +1,12 @@
 version: '3'
 
 services:
-  nodejs-app:
+  training:
+    image: thomaspsl/node:1.0.0
     container_name: training
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "2368:2368"
-    volumes:
-      - /app/logs
-    restart: always
+      - "2000:3000"
+    

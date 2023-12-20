@@ -173,7 +173,62 @@ $ docker inspect --format '{{.HostConfig.NetworkMode}}' mariadb
 
 ## 1. Écrire son Image Docker
 
-Voici l'url du dockerfile : ...
+Mon application fonctionnelle :
+
+<p align="center">
+    <img
+    width="550"
+    style="padding: 1rem"
+    src="images/app.png" />
+</p>
+
+Voici l'url du dockerfile : [Dockerfile](https://github.com/thomaspsl/MASTER_Docker/blob/master/projets/devops-training-nodejs/Dockerfile)
+
+## 2. Optimisation de l’image Docker
+
+Lignes de développement :
+```bash
+# Créer une image sous registry avec l'utilisation de Dockerfile
+$ docker build -t thomaspsl/node_vue:1.0.0 .
+
+# Créer le conteneur à l'aide du docker-compose
+$ docker-compose --project-name uglydockerfile up -d
+```
+
+Application avec l'image docker allégée :
+
+<p align="center">
+    <img
+    width="550"
+    style="padding: 1rem"
+    src="images/image.png" />
+</p>
+
+<p align="center">
+    <img
+    width="550"
+    style="padding: 1rem"
+    src="images/conteneur.png" />
+</p>
+
+## 3. Stack Multi-Service
+
+...
+
+## 4. La Docker Registry
+
+Dans une entreprise interne, un registry est une solution pour avoir une base organisée pour stocker les ressources. 
+
+Cela peut faciliter la collaboration entre les équipes, améliore la transparence et garantit la conformité aux normes internes. Il contribue également à renforcer la sécurité des informations gérant les contrôles d'accès et en facilitant son administration.
+
+Image de mon Docker Hub : [thomaspsl/node:1.0.0](https://hub.docker.com/repository/docker/thomaspsl/node/general)
+
+<p align="center">
+    <img
+    width="550"
+    style="padding: 1rem"
+    src="images/node.png" />
+</p>
 
 # Partie 3 : Orchestration de conteneurs
 
