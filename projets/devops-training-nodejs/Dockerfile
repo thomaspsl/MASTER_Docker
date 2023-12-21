@@ -7,7 +7,9 @@ RUN apt-get update -yq \
 && apt-get clean -y
 
 ADD . /app/
+
 WORKDIR /app
+
 RUN npm install
 
 EXPOSE 2000

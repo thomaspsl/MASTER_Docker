@@ -169,6 +169,10 @@ $ docker network ls
 $ docker inspect --format '{{.HostConfig.NetworkMode}}' mariadb
 ```
 
+## 6. Exercice Pratique
+
+-> Prof demande de passer à la suite
+
 # Partie 2 : Approfondissement des Connaissances
 
 ## 1. Écrire son Image Docker
@@ -253,4 +257,53 @@ Lien du projet GitHub : [MASTER_ApiGraph](https://github.com/thomaspsl/MASTER_Do
 
 # Partie 3 : Orchestration de conteneurs
 
-##
+## 1. Cluster & Orchestration
+
+### Clusterisation des conteneurs
+
+La clusterisation des conteneurs est une technique qui permet de regrouper des conteneurs individuels pour former un système plus complexe. Les outils de clusterisation comme Kubernetes automatisent les tâches de gestion des conteneurs, ça facilite le déploiement et la maintenance des applications conteneurisées.
+
+### Concept de microservice
+
+Les microservices constituent une architecture logicielle dans laquelle une application est divisée en plusieurs ensemble de petits services indépendants. Chaque service est responsable d'une fonction spécifique et peut être développé, déployé et mis à l'échelle de manière indépendante.
+
+### Scalability, Availability, et Load Balancing :
+
+Scalability : C'est la capacité d'un système à s'adapter à une augmentation de charge. Cela signifie que le système peut gérer plus de trafic ou de demandes sans perdre de performance ou de disponibilité.
+
+Availability : C'est la capacité d'un système à être accessible et opérationnel. Elle est généralement mesurée par le temps de disponibilité, c'est-à-dire la durée pendant laquelle le système est accessible.
+
+Load Balancing : C'est une pratique qui répartit la charge du trafic entre plusieurs instances d'un service. Cela permet d'optimiser l'utilisation des ressources et d'éviter la surcharge d'un seul nœud.
+
+La clusterisation des conteneurs offre des avantages pour résoudre des problèmes d'évolutivité, de disponibilité, et d'équilibrage de charge. Elle permet l'ajout ou la suppression de nœuds pour permettre d'améliorer le système.
+
+Parmi les outils qui permettent d'orchestrer des clusters de conteneurs, il y a : 
+- Kubernetes 
+- Docker Swarm
+- Amazon ECS 
+
+## 2. Docker Swarm
+
+-> Trop long
+
+## 3. Kubernetes
+
+Un cluster Kubernetes a plusieurs noeuds différents, parmi ceux existant il y a :
+
+Kubelet : C'est un agent qui s'occupe des conteneurs sur chaque nœud d'un cluster Kubernetes. Il communique avec le contrôleur de cluster pour s'assurer que les conteneurs sont déployés correctement et qu'ils fonctionnent correctement.
+
+Container Runtime : C'est le logiciel qui permet d'exécuter des conteneurs sur un nœud Kubernetes. Il peut être Docker, containerd, ou un autre runtime compatible.
+
+Kube Proxy : C'est un composant qui gère la communication réseau entre les services Kubernetes. Il permet aux services de communiquer entre eux et avec le monde extérieur.
+
+cAdvisor : C'est un outil qui collecte des données sur l'utilisation des ressources et les performances des conteneurs. Ces données sont utilisées par le Kubelet pour surveiller les nœuds Kubernetes.
+
+Pods: C'est un groupe de conteneurs qui sont traités comme une unité unique. Les conteneurs au sein d'un pod partagent un espace réseau et peuvent se communiquer entre eux.
+
+Kube DNS : C'est un service qui permet d'accéder aux services Kubernetes par leur nom au lieu de leur adresse IP.
+
+Pause Container : Chaque pod inclut un conteneur de pause qui fournit un espace réseau et un espace de noms communs à tous les conteneurs du pod.
+
+Node Status: Le composant qui enregistre l'état d'un nœud Kubernetes, y compris les ressources disponibles, la capacité mémoire, et d'autres informations importantes.
+
+Kubelet API Server : Le Kubelet expose une API qui permet au contrôleur de cluster de communiquer avec lui pour gérer les conteneurs et les pods.
