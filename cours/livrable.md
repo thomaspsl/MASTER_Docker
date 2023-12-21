@@ -213,7 +213,20 @@ Application avec l'image docker allégée :
 
 ## 3. Stack Multi-Service
 
-...
+Pour avoir une application fonctionnelle sur le localhost:80, dans le docker-compose il faut ajouter au conteneur de wordpress le port associé par conséquent : 
+```bash
+ports:
+  - "80:80"
+```
+Pour configurer les variables d'environemment il faut ajouter les lignes suivantes (sachant que 'mariadb_wordpress' permet la liaison avec la base de données MariaDB qui se trouve sur un autre conteneur): 
+
+```bash
+environment:
+    WORDPRESS_DB_HOST: mariadb_wordpress
+    WORDPRESS_DB_USER: root
+    WORDPRESS_DB_PASSWORD: example
+    WORDPRESS_DB_NAME: wordpress
+```
 
 ## 4. La Docker Registry
 
@@ -229,6 +242,14 @@ Image de mon Docker Hub : [thomaspsl/node:1.0.0](https://hub.docker.com/reposito
     style="padding: 1rem"
     src="images/node.png" />
 </p>
+
+## 5. Exercice Pratique
+
+Lien de l'image front_client : [front](https://hub.docker.com/layers/thomaspsl/front_client/1.0.0/images/sha256:209e5e431245818429c49803ca29cd5b881ce58acda8109aa69fd60d7edaa084?uuid=A21C0124-BDA1-4003-86B4-CF4F80B7729A)
+
+Lien de l'image back_server : [back](https://hub.docker.com/layers/thomaspsl/back_server/1.0.0/images/sha256:881109f36def38baf5094ed3aca7c3d71c40eae1797905c04399e18bfd393552?uuid=A21C0124-BDA1-4003-86B4-CF4F80B7729A)
+
+Lien du projet GitHub : [MASTER_ApiGraph](https://github.com/thomaspsl/MASTER_Docker/tree/master/projets/MASTER_ApiGraph)
 
 # Partie 3 : Orchestration de conteneurs
 

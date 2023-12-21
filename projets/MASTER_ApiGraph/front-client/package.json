@@ -1,0 +1,25 @@
+{
+  "name": "vue-boilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.7",
+    "@vue/apollo-composable": "^4.0.0-beta.11",
+    "axios": "^1.6.0",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
+    "pinia": "^2.1.6",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5"
+  }
+}

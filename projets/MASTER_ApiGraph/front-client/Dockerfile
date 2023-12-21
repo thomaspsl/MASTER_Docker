@@ -2,7 +2,7 @@
 FROM node:alpine as build
 
 # Installation des dépendances
-COPY package.json  /app/
+COPY package.json /app/
 WORKDIR /app
 RUN npm install
 

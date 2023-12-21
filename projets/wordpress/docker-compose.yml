@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_HOST: mariadb_wordpress
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: example
       WORDPRESS_DB_NAME: wordpress
